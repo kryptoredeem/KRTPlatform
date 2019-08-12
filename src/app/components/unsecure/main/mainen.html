@@ -1,0 +1,221 @@
+<div class="buttons">
+    <a ng-click="changeLanguaje('/es')"><p class="leng" id="español" >
+      <img src="assets/images/españa.jpg" alt="">
+    </p></a>
+    <a ng-click="changeLanguaje('/en')"><p class="lang" id="ingles">
+      <img src="assets/images/granb.png" alt="">
+    </p></a>
+  </div>
+  <!-- <a ng-click="changeLanguaje('en')">español<i class="fas fa-language"></a> -->
+    <!--ng-if='idioma == 0'  ng-if='idioma == 1'-->
+
+  <div>
+    <div class="en">
+
+      <!-- <acme-navbar></acme-navbar>
+      <div id="wrapper">
+         <nav-lateral></nav-lateral>
+         <div id="page-content-wrapper">
+            <h1>Bienvenidos!!!</h1>
+         </div>
+      </div> -->
+      <img id="imageindexcloud" src="assets/images/nub.png" alt="">
+
+      <!--
+
+         <div class="container-5">
+            <button id="login-button">log in</button>
+            <div class="login-container">
+              <form class="login-form">
+
+                  <div class="login-body"  >
+                     <md-card class="login-card"  md-theme-watch>
+                       <md-card-title class="login-title">
+                         <md-card-title-text class="text-center">
+                           <span class="md-headline login-span-head-first">
+                             <img src="assets/images/logo-ibh.png" class="login-img-logo"><br>
+                             Confía en tu perro
+                           </span>
+                         </md-card-title-text>
+                       </md-card-title>
+                       <form  name="form" ng-submit="login()" role="form"  class="login-form" ng-show="myLogin">
+                         <br><br><br><br>
+                         <div class="form-group">
+                             <md-input-container class="md-block">
+                                 <label class="login-label-input"> <ion-icon name="contact"></ion-icon>  Usuario</label>
+                                 <input ng-model="username" type="text" id="username" required>
+                             </md-input-container>
+                         </div>
+                         <div class="form-group">
+                             <md-input-container class=" md-block">
+                                 <label class="login-label-input"> <ion-icon name="lock"></ion-icon> Contraseña</label>
+                                 <input ng-model="password" type="password" name="password" id="password" required>
+                             </md-input-container>
+                         </div>
+                         <md-card-actions layout="row" layout-align="center">
+                           <md-button class="login-btn" type="submit">Acceder</md-button>
+                         </md-card-actions>
+                       </form>
+                       <form  name="form" ng-submit="recoveryPassword()" role="form"  class="login-form" ng-show="myRecoveryPassword">
+                         <br><br><br>
+                         <div class="form-group">
+                             <md-input-container class="md-block">
+                                 <label class="login-label-input"> <ion-icon name="contact"></ion-icon>  Usuario</label>
+                                 <input ng-model="username" type="text" id="usernameToRecovery" required>
+                             </md-input-container>
+                         </div>
+                         <md-card-actions layout="row" layout-align="center">
+                           <md-button class="login-btn" type="submit">Recuperar</md-button>
+                         </md-card-actions>
+                       </form>
+                       <div class="recovery-ibh-password">
+                         <a ng-click="seeRecoveryPassword()" ng-show="myLogin">Recuperar mi contraseña</a>
+                         <a ng-click="seeLogin()" ng-show="myRecoveryPassword">Iniciar Sesión</a>
+                       </div>
+                       <div class="login-credits">
+                         <p>©2018 Todos los Derechos Reservados </p>
+                         <a target="_blank" href="http://www.oeste.xyz/">
+                           <img src="assets/images/oeste-isologo.png"><br> oeste.xyz
+                         </a>
+                       </div>
+                     </md-card>
+                 </div>
+               </form>
+
+            </div>
+          </div> -->
+
+          <div>
+            <button type="text" class="buttonLogin buttonBlue openb" ng-click="openb()"><i class="fa fa-sign-in"></i>
+              <div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>
+            </button>
+          </div>
+
+
+
+          <div class="login-modal-overlay">
+
+            <div class="login-modal">
+              <!-- <h1>Sign In</h1>
+              <h2>To continue, please enter your credentials below.</h2>
+              <form name="form" ng-submit="login()" role="form"  class="login-form">
+                <div class="group">
+                  <input ng-model="username" type="text" id="username" required></span><span class="bar"></span>
+                  <label>Username</label>
+                </div>
+                <div class="group">
+                  <input ng-model="password" type="password" name="password" id="password" required></span><span class="bar"></span>
+                  <label>Password</label>
+                </div>
+                <button type="submit" class="buttonLogin buttonBlue" ng-click="seeLogin()">Login
+                  <div class="ripples buttonRipples">
+                    <span class="ripplesCircle"></span>
+                  </div>
+              </button>
+            </form> -->
+
+            <div id="container">
+
+              <ul class="tabs">
+                <li class="tab-link current" data-tab="tab-1">Login</li>
+                <li class="tab-link" data-tab="tab-2">Register</li>
+              </ul>
+
+              <div id="tab-1" class="login tab-content current">
+
+                <!-- <form>
+                  <div class="form-section">
+                    <span class="fa fa-user-o input-icon"></span>
+                    <input type="text" name="name" placeholder="Username">
+                  </div>
+                  <div class="form-section">
+                    <span class="fa fa-unlock-alt input-icon"></span>
+                    <input type="password" name="password" placeholder="Password">
+                  </div>
+                  <div class="form-section btn-container">
+                    <input type="submit" value="Login">
+                  </div>
+                </form> -->
+                <form name="form" ng-submit="loginen()" role="form"  class="login-form">
+                  <div class="group">
+                      <!-- <div class="form-section"> -->
+                      <span class="fa fa-user input-icon"></span>
+                    <input ng-model="username" type="text" id="username" required placeholder="Email"></span><span class="bar"></span>
+                    <!-- <label>Username</label> -->
+                  </div>
+                  <div class="group">
+                      <span class="fa fa-key input-icon"></span>
+                    <input ng-model="password" type="password" name="password" id="password" required placeholder="Password"></span><span class="bar"></span>
+                    <!-- <label>Password</label> -->
+                  </div>
+                  <button type="submit" class="buttonLogin buttonBlue" ng-click="seeLogin()">Login
+                    <div class="ripples buttonRipples">
+                      <span class="ripplesCircle"></span>
+                    </div>
+                </button>
+                <img ng-if="dataLoading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+              </form>
+
+              </div>
+              <div id="tab-2" class="register tab-content">
+                <form name="form" ng-submit="register()" role="form">
+
+
+                  <div class="form-section" ng-class="{ 'has-error': form.nombre.$dirty && form.nombre.$error.required }">
+                    <label for="nombre"></label>
+                    <span class="fa fa-user input-icon"></span>
+                    <input type="text" name="nombre" id="username" placeholder="Name" ng-model="user.nombre" required="required"><span class="bar"></span>
+                    <span ng-show="form.nombre.$dirty && form.nombre.$error.required" class="help-block">Name is required</span>
+                  </div>
+
+                  <div class="form-section" ng-class="{ 'has-error': form.apellido.$dirty && form.apellido.$error.required }">
+                    <label for="apellido"></label>
+                    <span class="fa fa-user input-icon"></span>
+                    <input type="text" name="apellido" id="username" placeholder="Last name" ng-model="user.apellido" required><span class="bar"></span>
+                    <span ng-show="form.apellido.$dirty && form.apellido.$error.required" class="help-block">Last name is required</span>
+                  </div>
+
+                  <div class="form-section"ng-class="{ 'has-error': form.username.$dirty && form.username.$error.required }">
+                      <label for="username"></label>
+                    <span class="fa fa-envelope input-icon"></span>
+                    <input  type="email" name="username" id="username" ng-model="user.username" required placeholder="Email"></span><span class="bar"></span>
+                    <span ng-show="form.username.$dirty && form.username.$error.required" class="help-block">Email is required</span>
+                  </div>
+                  <!-- <div class="form-section">
+                    <span class="fa fa-envelope-o input-icon"></span>
+                    <input type="email" name="name" placeholder="Email" class="email">
+                  </div>-->
+                  <div class="form-section" ng-class="{ 'has-error': form.password.$dirty && form.password.$error.required }">
+                      <label for="password"></label>
+                    <span class="fa fa-unlock-alt input-icon"></span>
+                    <input type="password" name="password" id="username" placeholder="Password" ng-model="user.password" required><span class="bar"></span>
+                    <span ng-show="form.password.$dirty && form.password.$error.required" class="help-block">Password is required</span>
+                  </div>
+
+                  <div class="form-section" ng-class="{ 'has-error': form.confirmpassword.$dirty && form.confirmpassword.$error.required }">
+                    <label for="confirmpassword"></label>
+                  <span class="fa fa-unlock-alt input-icon"></span>
+                  <input type="password" name="confirmpassword" id="username" placeholder="Confirm Password" ng-model="user.confirmpassword" required><span class="bar"></span>
+                  <span ng-show="form.confirmpassword.$dirty && form.confirmpassword.$error.required" class="help-block">Password is required</span>
+                </div>
+
+
+                  <!-- <div class="form-section btn-container">
+                    <input type="submit" value="Register">
+                  </div> -->
+                  <div class="form-actions">
+                      <button type="submit" ng-disabled="form.$invalid || vm.dataLoading" class="buttonLogin buttonBlue">Register</button>
+                      <img ng-if="vm.dataLoading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+                  </div>
+                </form>
+              </div>
+
+            </div>
+
+
+          </div>
+
+          </div>
+
+    </div>
+  </div>

@@ -1,0 +1,257 @@
+
+    <acme-navbaren></acme-navbaren>
+    <div id="wrapper">
+      
+       <nav-lateralen></nav-lateralen>
+       
+       <div id="page-content-wrapper">
+          <div class="container-fluid xyz">
+              <div class="row">
+                 <div class="col-lg-12">
+                      <!-- <header>
+                            <h4 id="titleCard" style="color:white">BitRewards Stay Cool</h4>
+                            <h5 id="titleCard-1" style="color:white">This offer expires in:</h5>
+                        
+                               <span id="indicatorTime-1">dias&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; horas&nbsp;&nbsp;&nbsp;&nbsp; minutos&nbsp;&nbsp; &nbsp;segundos</span>
+                              <h1 id="time" class="text-center clock-timer">00:00:00:00</h1>
+                              <div id="clocktimer"></div> 
+                             
+                         </header> -->
+                      <div id='main'>
+                         <article id="article">
+                            <h1>Get $5 for your feedback!</h1>
+                            <h4>How likely is it that you would recommend us to a friend or colleague?</h4>
+                            
+
+                            <div ng-controller="WindowsController as vmt">
+                                <rzslider rz-slider-model="vmt.priceSlider.value" rz-slider-options="vmt.priceSlider.options"></rzslider>
+                                <!-- <p>Price: {{vmt.priceSlider.value}}</p> -->
+                                <div id="div-buttomOrange"><button class="btn-1 orange" type="button"><strong style="font-size:200%">{{vmt.priceSlider.value}} de 10</strong></button></div>
+                              </div>
+                              <div class="officient-info--anually"><strong>Brigitte</strong> and <strong>184</strong> more people rated today:</div>
+                            <!-- <script type="text/javascript">
+                                var pricingData = [
+                            //   { range: [1, 30], base: 180, pp: 0 },
+                            //   { range: [31, 500], base: 180, pp: 6 },
+                            //   { range: [501, Infinity], base: 0, pp: 0 },
+                            //   { range: [0, 30], base: 180, pp: 0 },
+                            //   { range: [31, 500], base: 180, pp: 6 },
+                            //   { range: [11, Infinity], base: 0, pp: 0 },
+                              { range: [0, 0], base: 10, pp: 0 },
+                              { range: [1, 10], base: 10, pp: 6 },
+                              { range: [11, Infinity], base: 0, pp: 0 },
+                                ]
+                             -->
+                                <!-- function priceChange(val) {
+                                    var pricingPlan = pricingData.filter(function(pricing) {
+                                        return (val >= pricing.range[0] && val <= pricing.range[1])
+                                    })[0]
+                            
+                                    // update current value
+                                    var domSlider = document.querySelector('.officient-pricing .officient-pricing--slider');
+                                    var domValue = domSlider.querySelector('.officient-slider--number span');
+                                    domValue.innerHTML = val
+                                if (val == 0){domValue.innerHTML = 'Pésimo'} 
+                                if (val == 1){domValue.innerHTML = 'Muy Malo'} 
+                                if (val == 2){domValue.innerHTML = 'Malo'} 
+                                if (val == 3){domValue.innerHTML = 'Insuficiente'} 
+                                if (val == 4){domValue.innerHTML = 'Puede Mejorar'} 
+                                if (val == 5){domValue.innerHTML = 'Regular'} 
+                                if (val == 6){domValue.innerHTML = 'Aprobado'} 
+                                if (val == 7){domValue.innerHTML = 'Suficiente'} 
+                                if (val == 8){domValue.innerHTML = 'Bien'} 
+                                if (val == 9){domValue.innerHTML = 'Muy Bien'} 
+                                if (val == 10){domValue.innerHTML = 'Excelente'} 
+                                
+                                var percentage = ((val / 500) * 100)
+                                domValue.style.left = percentage + '%'
+                                
+                            
+                                    // update pricing plan
+                                    if (pricingPlan) {
+                                        var domPricing = document.querySelector('.officient-pricing .officient-pricing--info');
+                                        var domPrice = domPricing.querySelector('.officient-info--price')					
+                            
+                                        var priceString = 'Custom'
+                                        if (pricingPlan.range[1] !== Infinity) {
+                                            // var price = (pricingPlan.base + ((val - (pricingPlan.range[0] - 1)) * pricingPlan.pp))
+                                            var price = (val)
+                                            priceString = price + ' de 10'
+                                        }
+                            
+                                        domPrice.innerHTML = priceString
+                                    }
+                                }
+                            </script> -->
+                            <!-- <style type="text/css">
+                                /* root */
+                                .officient-pricing {
+                                    display: block;
+                                    margin: 0 auto;
+                                    text-align: center;
+                                    font-family: 'Roboto', sans-serif;
+                                background-color: #FFFFFF;
+                                }
+                              
+                              .officient-pricing--contain {
+                                max-width: 1160px;
+                                padding: 20px 20px 0;
+                                margin: auto;
+                              }
+                                
+                                        .officient--rangeslider::-webkit-slider-thumb {
+                                            -webkit-appearance: none;
+                                            box-shadow: inset 0 -1px 0 rgba(0,0,0,.1), 0 1px 3px rgba(0,0,0,.5);
+                                            height: 30px;
+                                            width: 30px;
+                                            border-radius: 50%;
+                                            background: #ffffff;
+                                            background: linear-gradient(to bottom, #ffffff, #cccccc);
+                                            cursor: pointer;
+                                        }
+                            
+                                        .officient--rangeslider::-moz-range-thumb {
+                                            box-shadow: inset 0 -1px 0 rgba(0,0,0,.1), 0 1px 3px rgba(0,0,0,.5);
+                                            height: 30px;
+                                            width: 30px;
+                                            border-radius: 50%;
+                                            background: #ffffff;
+                                            background: linear-gradient(to bottom, #ffffff, #cccccc);
+                                            cursor: pointer;
+                                        }
+                            
+                                        .officient--rangeslider::-ms-thumb {
+                                            box-shadow: inset 0 -1px 0 rgba(0,0,0,.1), 0 1px 3px rgba(0,0,0,.5);
+                                            height: 30px;
+                                            width: 30px;
+                                            border-radius: 50%;
+                                            background: #ffffff;
+                                            background: linear-gradient(to bottom, #ffffff, #cccccc);
+                                            cursor: pointer;
+                                        }
+                                
+                                .officient--rangeslider {
+                                    -webkit-appearance: none;
+                                    width: 100%;
+                                    height: 12px;
+                                    background: #d7dcdf;
+                                    outline: none;
+                                    padding: 0;
+                                    margin: 0;
+                                    box-shadow: 0 1px 2px rgba(0,0,0,0.10), 0 1px 2px rgba(0,0,0,0.20);
+                                    background: linear-gradient(#00cbe6, #00be92);
+                                    border-radius: 20px;
+                                }
+                            
+                                /* first level */
+                                .officient-pricing .officient-pricing--info {
+                                    margin-top: 10px;
+                                    color: #2e405b;
+                                }
+                                
+                                .officient-pricing--slider .officient-slider--title {
+                                    color: #2e405b;
+                                    font-size: 22px;
+                                    font-weight: "Roboto", sans-serif;
+                                    font-weight: 600;
+                                    margin-bottom: 10px;
+                                }
+                              
+                              .officient-pricing--slider .officient-slider--subtitle {
+                                    color: #2e405b;
+                                    font-size: 14px;
+                                    font-weight: "Roboto", sans-serif;
+                                    font-weight: 400;
+                                    margin-bottom: 30px;
+                                }
+                            
+                                /* second level */
+                                .officient-pricing--slider .officient-slider--number {
+                                    /* margin: 15px 0; */
+                                    font-size: 16px;
+                                    color: #2e405b;
+                                font-weight: bold;
+                                text-shadow: 0 1px 2px rgba(0,0,0,0.10);
+                                /* position: relative;
+                                height: 20px;
+                                margin-left: 0px;
+                                margin-right: 30px; */
+                                /* background: red; */
+                                width: 100%;
+                                }
+                              .officient-pricing--slider .officient-slider--number span {
+                                /* position: absolute;
+                                left: 9.8%;
+                                width: 28px; */
+                                /* color: #2fc2d6; */
+                              }
+                            
+                                .officient-pricing--info .officient-info--price {
+                                    font-size: 25px;
+                                    font-weight: bold;
+                                    
+                                }
+                            
+                                .officient-pricing--info .officient-info--anually {
+                                    font-size: 14px;
+                                    margin-top: 10px;
+                                }
+                            </style> -->
+                            <!-- <div class="officient-pricing">
+                                <div class="officient-pricing--contain">
+                                    <div class="officient-pricing--slider"> -->
+                                        <!-- <div class="officient-slider--title">How many people do you have?</div>
+                                    <div class="officient-slider--subtitle">Incl. freelancers and interns</div> -->
+                                        <!-- <input type="range" min="0" max="10" value="5"  -->
+                                        <!-- <input type="range" min="0" max="10" value="10" 
+                                            class="officient--rangeslider" 
+                                            oninput="priceChange(this.value)" 
+                                            onchange="priceChange(this.value)" 
+                                        /><br />
+                                        <div class="officient-slider--number">
+                                            <span>Excelente
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="officient-pricing--info">
+                                        <div id="div-buttomOrange"><button class="btn-1 orange" type="button"><div class="officient-info--price">10 de 10</div></button></div>
+                                        <div class="officient-info--anually"><strong>Brigitte</strong> and <strong>184</strong> more people rated today:</div>
+                                    </div>
+                                </div>
+                            </div>    -->
+                            <div id="slider-k-1">
+                                <div class="frame-k">
+                                    <img src="http://lorempixel.com/500/300/nature" alt="" />
+                                </div>
+                                <div class="frame-k">
+                                    <img src="http://lorempixel.com/500/300/animals" alt="" />
+                                </div>
+                                <div class="frame-k">
+                                    <img src="http://lorempixel.com/500/300/people" alt="" />
+                                </div>
+                                <div class="frame-k">
+                                    <img src="http://lorempixel.com/500/300/transport" alt="" />
+                                </div>
+                            </div> 
+                            <h5 class="text-center"><strong>Average rate <span style="color:#2fc2d6; font-size: 140%;">9.5</span></strong></h5>
+                         </article>
+                         <!-- <nav><img id="navImage-2" src="assets/images/persona1.png" alt=""></nav> -->
+                         <aside>
+                            <img id="cardGold" src="assets/images/giftcardazul.png" alt="" width="320px">
+                            <h1>$5</h1>
+                            <h6>discount</h6>
+                            <a href="#" class="button-1 js-button" role="button">Show content</a>
+                               
+                               <p id="parrafoUltimo">Good for purchases from 9</p>
+                               <p id="parrafoUltimoAbajo">Hecho en KryptoRedeem</p>
+                         </aside>
+                      </div>
+                      
+                 </div>
+              </div>
+           </div> 
+       </div>
+     
+    </div>
+   
+    <!-- <nav-down></nav-down> -->

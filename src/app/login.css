@@ -1,0 +1,426 @@
+
+
+   .openb {
+    float: right;
+    margin: 20px;
+  }
+  
+  
+  /* Modal overlay */
+  
+  .login-modal-overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+  }
+  
+  
+  /* modal */
+  
+  .login-modal {
+    background: rgba(0, 0, 0, 0);
+    /* background: #333; */
+    /* max-width: auto; */
+    width: 310px;
+    height: 100px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    /* -webkit-box-shadow: 0 -2px 25px 0 rgba(0, 0, 0, 0.15), 0 13px 25px 0 rgba(0, 0, 0, 0.3); */
+    border-radius: 2px;
+    padding: 0px;
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  }
+  
+  
+  /* general styles */
+  
+  .login-modal h1 {
+    padding-top: 0;
+    margin: 0;
+    font-size: 18px;
+    color: #333;
+    padding-bottom: 10px;
+  }
+  
+  .login-modal h2 {
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 26px;
+    color: #757575;
+    font-feature-settings: "kern" 1;
+    font-kerning: normal;
+    hyphens: auto;
+    padding-bottom: 30px;
+  }
+  
+  
+  /* form & imputs */
+  
+  .login-modal .group { 
+    position: relative; 
+    margin-bottom: 45px; 
+  }
+  
+  /* .login-modal input {
+    font-size: 18px;
+    padding: 10px 10px 10px 5px;
+    -webkit-appearance: none;
+    display: block;
+    background: transparent;
+    color: #636363;
+    width: 100%;
+    border: none;
+    border-radius: 0;
+    border-bottom: 1px solid #cdcdcd;
+  }
+  
+  .login-modal input:focus {
+    outline: none;
+  } */
+  
+  
+  /* Label */
+  
+  .login-modal label {
+    color: #999; 
+    font-size: 18px;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left: 5px;
+    top: 10px;
+    transition: all 0.2s ease;
+  }
+  
+  
+  /* active */
+  
+  .login-modal input:focus ~ label,
+  .login-modal input.used ~ label {
+    top: -20px;
+    transform: scale(.75);
+    left: -4px;
+    color: #00A0E3;
+  }
+  
+  
+  /* Underline */
+  
+  .login-modal .bar {
+    position: relative;
+    display: block;
+    width: 100%;
+  }
+  
+  .login-modal .bar:before,
+  .login-modal .bar:after {
+    content: '';
+    height: 2px; 
+    width: 0;
+    bottom: 1px; 
+    position: absolute;
+    background: #00A0E3; 
+    -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    -ms-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+  }
+  
+  .login-modal .bar:before {
+    left: 50%;
+  }
+  
+  .login-modal .bar:after {
+    right: 50%;
+  }
+  
+  
+  /* active */
+  
+  .login-modal input:focus ~ .bar:before,
+  .login-modal input:focus ~ .bar:after {
+    width: 50%;
+  }
+  
+  
+  /* Button */
+  
+  .buttonLogin {
+    position: relative;
+    display: inline-block;
+    padding: 0 24px;
+    height: 38px;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 38px;
+    -webkit-font-smoothing: antialiased;
+    text-align: center;
+    letter-spacing: 1px;
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    -webkit-transition: all 0.15s ease;
+    -moz-transition: all 0.15s ease;
+    -ms-transition: all 0.15s ease;
+    -o-transition: all 0.15s ease;
+    transition: all 0.15s ease;
+    border-radius: 3px;
+    box-shadow: 0 1px 0 rgba(0,0,0,0.05);
+  }
+  
+  .buttonLogin:focus { 
+    outline: 0;
+  }
+  
+  .buttonLogin:hover {
+      background: #46ADD8;
+      box-shadow: inset 0 -2px 0 rgba(0,0,0,0.27);
+  }
+  .buttonLoginoff {
+    position: relative;
+    display: inline-block;
+    padding: 0 24px;
+    height: 38px;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 38px;
+    -webkit-font-smoothing: antialiased;
+    text-align: center;
+    letter-spacing: 1px;
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    -webkit-transition: all 0.15s ease;
+    -moz-transition: all 0.15s ease;
+    -ms-transition: all 0.15s ease;
+    -o-transition: all 0.15s ease;
+    transition: all 0.15s ease;
+    border-radius: 3px;
+    box-shadow: 0 1px 0 rgba(0,0,0,0.05);
+    background: red;
+  }
+  
+  .buttonLoginoff:focus { 
+    outline: 0;
+  }
+  
+  .buttonLoginoff:hover {
+      background: #f50606;
+      box-shadow: inset 0 -2px 0 rgba(0,0,0,0.27);
+  }
+  
+  /* Button modifiers */
+  
+  .buttonBlue {
+    background: #00A0E3;
+    text-shadow: 1px 1px 0 rgba(39, 110, 204, .5);
+  }
+  
+  .buttonBlue:hover { background: #0092D0; }
+  .buttonBlueoff {
+    background: #48d9b8;
+    text-shadow: 1px 1px 0 rgba(39, 110, 204, .5);
+  }
+  
+  .buttonBlueoff:hover { background: rgba(13, 25, 57, 0.897); }
+  
+  /* Ripples container */
+  
+  .ripples {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: transparent;
+  }
+  
+  
+  /* Ripples circle */
+  
+  .ripplesCircle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -moz-transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.25);
+  }
+  
+  .ripples.is-active .ripplesCircle {
+    animation: ripples .4s ease-in;
+  }
+  
+  
+  /* Ripples animation */
+  
+  @keyframes ripples {
+    0% { opacity: 0; }
+  
+    25% { opacity: 1; }
+  
+    100% {
+      width: 200%;
+      padding-bottom: 200%;
+      opacity: 0;
+    }
+  }
+
+
+
+  /******************************************************************************************************/
+  @import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700");
+* {
+  padding: 0;
+  margin: 0;
+  font-family: 'Open Sans', 'Roboto', 'Arial';
+  outline-width: 0;
+}
+
+#container {
+  width: 400px;
+  margin: 40px auto;
+  background: #3498db;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+.tabs {
+  display: flex;
+}
+ul.tabs {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-radius: 5px 5px 0 0;
+}
+ul.tabs li {
+  background: transparent;
+  color: #fff;
+  display: inline-block;
+  padding: 10px 0;
+  cursor: pointer;
+  flex: 1;
+  text-align: center;
+  font-weight: 600;
+}
+ul.tabs li.current {
+  background: #fff;
+  color: #444;
+}
+
+.tab-content {
+  display: none;
+  padding: 15px;
+}
+.tab-content.current {
+  display: inherit;
+  background: #fff;
+}
+
+input[type=text], input[type=password], input[type=email], input[type=number] {
+  background: #f1f1f1;
+  width: 100%;
+  padding: 15px 0;
+  margin-bottom: 10px;
+  border: none;
+  text-indent: 60px;
+  color: rgb(124, 124, 124);
+}
+
+input[type=password] {
+  /* margin-bottom: 0; */
+}
+
+input[type=submit] {
+  background: #3498db;
+  border: none;
+  padding: 10px 0;
+  text-align: center;
+  width: 100%;
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s ease;
+  -webkit-transition: 0.3s ease;
+  -moz-transition: 0.3s ease;
+  -ms-transition: 0.3s ease;
+}
+input[type=submit]:hover {
+  background: #2980b9;
+}
+
+.input-icon {
+  position: absolute;
+  margin-top: 17px;
+  margin-left: 17px;
+}
+.input-icon:after {
+  content: "";
+  display: block;
+  height: 49px;
+  width: 1px;
+  background: #ddd;
+  position: absolute;
+  margin-top: -33px;
+  left: 30px;
+}
+/* input:valid {
+ 
+  border: 1px solid green;
+   
+  }
+input:required:invalid {
+ 
+  border: 1px solid red;
+   
+  } */
+   
+
+.btn-container {
+  margin-top: 10px;
+}
+
+.btn-icon {
+  position: absolute;
+}
+
+/* You don't really need these */
+/* body {
+  background: #eee;
+} */
+
+.new {
+  text-align: center;
+}
+.new p {
+  color: #aaa;
+}
+.new p a {
+  text-decoration: none;
+  font-weight: 700;
+  color: #999;
+  box-shadow: inset 0 -2px 0 transparent;
+}
+.new p a:hover {
+  box-shadow: inset 0 -2px 0 #999;
+}

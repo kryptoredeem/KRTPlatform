@@ -1,0 +1,58 @@
+
+    <acme-navbaren></acme-navbaren>
+    <div id="wrapper">
+       <!-- Sidebar -->
+       <nav-lateralen></nav-lateralen>
+    
+       <div id="page-content-wrapper">
+          <div class="container-fluid xyz">
+              <div class="row">
+                 <div class="col-lg-12">
+                      
+                      <div id='main'>
+                         <article id="article">
+                           
+                                          <h1 class="text-center" style="color:black" id="titleoferta">What price works for you?</h1>
+                                          <h4 class="text-center">Make an offer for this product:</h4>
+                                          <div ng-controller="WindowsController as vmt">
+                                             <H1 class="text-center"><strong>{{vmt.priceSliderVenta.options.ceil}}$</strong></H1>
+                                         <rzslider rz-slider-model="vmt.priceSliderVenta.value" rz-slider-options="vmt.priceSliderVenta.options"></rzslider>
+                                         <div id="estadistics">
+                                             <div id="boy">
+                                                 <h5>Savings <strong style="color:#2fc2d6; font-size: 125%">{{100-((vmt.priceSliderVenta.value*100)/(vmt.priceSliderVenta.options.ceil)) | number:2}}%</strong></h6>
+                                             </div>
+                                             <div id="boy-1">
+                                                 <H5>Current price <strong style="font-size: 125%">{{vmt.priceSliderVenta.options.ceil}}$</strong></H6>
+                                             </div>
+                                         </div>
+                                         <h6 class="text-center">Likelihood of success: <strong>
+                                             <span ng-if="((vmt.priceSliderVenta.value*100)/(vmt.priceSliderVenta.options.ceil)) < 40" style="color:red">Low</span>
+                                             <span ng-if="((vmt.priceSliderVenta.value*100)/(vmt.priceSliderVenta.options.ceil)) < 85 && ((vmt.priceSliderVenta.value*100)/(vmt.priceSliderVenta.options.ceil)) >= 40" style="color:#F6BB42">Average</span>
+                                             <span ng-if="((vmt.priceSliderVenta.value*100)/(vmt.priceSliderVenta.options.ceil)) >= 85" style="color:#08C58C">High</span>
+                                              {{((vmt.priceSliderVenta.value*100)/(vmt.priceSliderVenta.options.ceil)) | number:2}}%</strong></h6>
+                                        
+                                        
+                                         <progress ng-if="((vmt.priceSliderVenta.value*100)/(vmt.priceSliderVenta.options.ceil)) >= 85" class="skill-green" max="100" value="{{  ((vmt.priceSliderVenta.value*100)/(vmt.priceSliderVenta.options.ceil)) |number:2  }}"></progress>
+                                         <progress ng-if="((vmt.priceSliderVenta.value*100)/(vmt.priceSliderVenta.options.ceil)) < 85 && ((vmt.priceSliderVenta.value*100)/(vmt.priceSliderVenta.options.ceil)) >= 40" class="skill-yellow" max="100" value="{{  ((vmt.priceSliderVenta.value*100)/(vmt.priceSliderVenta.options.ceil)) |number:2  }}"></progress>
+                                         <progress ng-if="((vmt.priceSliderVenta.value*100)/(vmt.priceSliderVenta.options.ceil)) < 40" class="skill-red" max="100" value="{{  ((vmt.priceSliderVenta.value*100)/(vmt.priceSliderVenta.options.ceil)) |number:2  }}"></progress>
+                                        
+                                         
+                                         <div id="div-buttomOrange"><button class="btn-1 orange" type="button"><strong style="font-size:150%">Make an offer</strong></button></div>
+                                       </div>
+                                     
+                            <!-- <img src="assets/images/p30.png" alt=""> -->
+                         </article>
+                         <aside>
+                              <img id="imagep30" src="assets/images/p30.png" alt="">
+                         </aside>
+                      </div>
+                      
+                 </div>
+              </div>
+           </div> 
+       </div>
+       <!-- /#page-content-wrapper -->
+    </div>
+    <!-- /#wrapper -->
+    <!-- jQuery -->
+    <!-- <nav-down></nav-down> -->

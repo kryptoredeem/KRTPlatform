@@ -1,0 +1,376 @@
+
+#articleSlider{
+    margin: 4px;
+    padding: 5px;
+    border: 1px solid #fff;
+    border-radius: 7pt;
+    background: #fff;
+    -webkit-flex: 3 1 60%;
+            flex: 3 1 60%;
+    -webkit-order: 2;
+            order: 2;
+            z-index: 0 !important;
+            padding: 0 1rem;
+            margin: 1rem;
+            /* width: 800px;
+            height: 400px; */
+}
+/* Storing images */
+
+:root {
+	--img-1: url(https://images.unsplash.com/photo-1556845914-5e3e98cff3be?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80);
+	--img-2: url(https://images.unsplash.com/photo-1556442717-2eb4645c8875?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80);
+	--img-3: url(https://images.unsplash.com/photo-1556128923-166bf4b87330?ixlib=rb-1.2.1&auto=format&fit=crop&w=1651&q=80);
+	--img-4: url(https://images.unsplash.com/photo-1556038024-07f7daf0b84f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1651&q=80);
+	--img-5: url(https://images.unsplash.com/photo-1528462624147-e8d798e8262c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1951&q=80);
+	--img-6: url(https://images.unsplash.com/photo-1555993539-1732b0258235?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80);
+	--img-7: url(https://images.unsplash.com/photo-1508711046474-2f4c2d3d30ca?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80);
+	--img-8: url(https://images.unsplash.com/photo-1555117746-a7c449e5d0ff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2090&q=80);
+	--anim: all 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+	--primary: 255, 255, 255;
+	--secondary: 56, 58, 102;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+	padding: 0;
+	margin: 0;
+}
+
+/* body {
+	height: 100vh;
+	width: 100%;
+	background-image: linear-gradient(160deg, #fdfcfb 0%, #e2d1c3 100%);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+} */
+
+/* Creating slider container */
+
+.slider {
+	--sH: 460px; /* slider height */
+	--sW: 820px; /* slider width */
+	--tH: calc(var(--sH)/5); /* calculating thumb height */
+	--tW: calc(var(--sW)/5); /* calculating thumb width */
+	position: relative;
+	height: var(--sH);
+	width: var(--sW);
+	background: rgb(var(--primary));
+	border-radius: 3px;
+	overflow: hidden;
+	box-shadow: 0 1px 1px rgba(var(--secondary), 0.29),
+		0 3px 3px rgba(var(--secondary), 0.23), 0 5px 5px rgba(var(--secondary), 0.19),
+		0 7px 7px rgba(var(--secondary), 0.17),
+		0 11px 11px rgba(var(--secondary), 0.13),
+		0 13px 13px rgba(var(--secondary), 0.11),
+		0 17px 17px rgba(var(--secondary), 0.07),
+		0 19px 19px rgba(var(--secondary), 0.05),
+		0 23px 23px rgba(var(--secondary), 0.03),
+		0 29px 29px rgba(var(--secondary), 0.01);
+}
+
+/* Hiding inputs */
+
+/* input[type="radio"],
+input[type="checkbox"] {
+	position: absolute;
+	display: none;
+	z-index: 300;
+} */
+
+/* Creating slide flechasigation */
+
+.flechas {
+	--h: 70px;
+	--w: 30px;
+	--bR: 5px;
+	content: "";
+	position: absolute;
+	top: calc(50% - var(--h)/2);
+	height: var(--h);
+	width: var(--w);
+	background: rgb(var(--primary));
+	box-shadow: 0 3px 8px rgba(var(--secondary), 0.5);
+	opacity: 0.6;
+	transition: var(--anim);
+	cursor: pointer;
+	z-index: 500;
+}
+
+.flechas:hover {
+	opacity: 0.75;
+}
+
+.flechas:after {
+	content: "";
+	position: inherit;
+	--d: 14px;
+	height: var(--d);
+	width: var(--d);
+	top: calc(50% - var(--d)/2);
+	background: linear-gradient(
+		45deg,
+		rgba(var(--secondary), 1) 49%,
+		rgba(0, 0, 0, 0) 50%,
+		rgba(0, 0, 0, 0)
+	);
+}
+
+.flechas.left {
+	left: 0;
+	border-top-right-radius: var(--bR);
+	border-bottom-right-radius: var(--bR);
+}
+
+.flechas.right {
+	right: 0;
+	border-top-left-radius: var(--bR);
+	border-bottom-left-radius: var(--bR);
+}
+
+.flechas.left:after {
+	left: calc(50% - var(--d)/3);
+	transform: rotate(45deg);
+}
+
+.flechas.right:after {
+	right: calc(50% - var(--d)/3);
+	transform: rotate(225deg);
+}
+
+/* Creating a button to open/close the scrollable container */
+
+label[for="open"] {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	--h: 40px;
+	height: var(--h);
+	width: var(--sW);
+	left: 0;
+	bottom: 0;
+	cursor: pointer;
+	z-index: 100;
+	transition: var(--anim);
+}
+
+/* Creating an arrow with pseudo-elements */
+
+label[for="open"]:before,
+label[for="open"]:after {
+	--h: 4px;
+	--w: 18px;
+	content: "";
+	position: absolute;
+	height: var(--h);
+	width: var(--w);
+	border-radius: 5px;
+	background: rgba(var(--primary));
+	transition: inherit;
+	transition-duration: 0.3s;
+}
+
+label[for="open"]:before {
+	left: calc(50% - var(--w) + 1px);
+	transform-origin: top right;
+	transform: rotate(-12deg);
+}
+
+label[for="open"]:after {
+	right: calc(50% - var(--w) + 1px);
+	transform-origin: top left;
+	transform: rotate(12deg);
+}
+
+/* Changing direction of arrow depending on checkbox's state */
+
+input[id="open"]:checked + label[for="open"]:before {
+	left: calc(50% - var(--w) + 1px);
+	transform-origin: top right;
+	transform: rotate(12deg);
+}
+
+input[id="open"]:checked + label[for="open"]:after {
+	right: calc(50% - var(--w) + 1px);
+	transform-origin: top left;
+	transform: rotate(-12deg);
+}
+
+/* Large preview of selected slide */
+
+.slidePhoto {
+	content: "";
+	position: absolute;
+	visibility: hidden;
+	opacity: 0;
+	height: var(--sH);
+	width: var(--sW);
+	top: 0;
+	left: 0;
+}
+
+/* Horizontal scroll container for thumbnails */
+
+.thumbs {
+	position: absolute;
+	display: flex;
+	width: initial;
+	bottom: calc(-1*var(--tH));
+	padding-top: 120px;
+	background: linear-gradient(
+		to top,
+		rgba(0, 0, 0, 0.9) 0%,
+		rgba(0, 0, 0, 0) 100%
+	);
+	transition: var(--anim);
+}
+
+/* Disabling scrollbar */
+
+.thumbs::-webkit-scrollbar {
+	height: 0px;
+}
+
+/* Setting parameters for thumbnails */
+
+.thumbnail {
+	display: inline-block;
+	height: var(--tH);
+	min-width: var(--tW);
+}
+
+.thumbnail:hover {
+	box-shadow: inset 0 0 0 1px rgba(var(--primary), 0.5);
+}
+
+/* slidePhotos and thumbnails */
+
+.slidePhoto,
+.thumbnail {
+	content: "";
+	margin: 0;
+	padding: 0;
+	background-size: cover;
+	background-position: center center;
+	transition: var(--anim);
+}
+
+.slidePhoto:nth-child(1),
+.thumbnail:nth-child(1) {
+	background-image: var(--img-1);
+}
+.slidePhoto:nth-child(2),
+.thumbnail:nth-child(2) {
+	background-image: var(--img-2);
+}
+.slidePhoto:nth-child(3),
+.thumbnail:nth-child(3) {
+	background-image: var(--img-3);
+}
+.slidePhoto:nth-child(4),
+.thumbnail:nth-child(4) {
+	background-image: var(--img-4);
+}
+.slidePhoto:nth-child(5),
+.thumbnail:nth-child(5) {
+	background-image: var(--img-5);
+}
+.slidePhoto:nth-child(6),
+.thumbnail:nth-child(6) {
+	background-image: var(--img-6);
+}
+.slidePhoto:nth-child(7),
+.thumbnail:nth-child(7) {
+	background-image: var(--img-7);
+}
+.slidePhoto:nth-child(8),
+.thumbnail:nth-child(8) {
+	background-image: var(--img-8);
+}
+
+/*--- CSS logic ---*/
+
+/* Open/close thumbnails */
+
+input[id="open"]:checked ~ .thumbs {
+	bottom: 0;
+}
+input[id="open"]:checked ~ label[for="open"] {
+	bottom: var(--tH);
+}
+
+/* Setting preview image depending on which slidePhoto is selected */
+
+input[name="slides"]:nth-child(1):checked ~ .preview > *:nth-child(1),
+input[name="slides"]:nth-child(2):checked ~ .preview > *:nth-child(2),
+input[name="slides"]:nth-child(3):checked ~ .preview > *:nth-child(3),
+input[name="slides"]:nth-child(4):checked ~ .preview > *:nth-child(4),
+input[name="slides"]:nth-child(5):checked ~ .preview > *:nth-child(5),
+input[name="slides"]:nth-child(6):checked ~ .preview > *:nth-child(6),
+input[name="slides"]:nth-child(7):checked ~ .preview > *:nth-child(7),
+input[name="slides"]:nth-child(8):checked ~ .preview > *:nth-child(8) {
+	visibility: visible;
+	opacity: 1;
+}
+
+input[id="previous"]:checked ~ label[for="previous"],
+input[id="next"]:checked ~ label[for="next"] {
+	opacity: 1;
+}
+
+input[name="slides"]:nth-child(1):checked ~ .thumbs .thumbnail:nth-child(1),
+input[name="slides"]:nth-child(2):checked ~ .thumbs .thumbnail:nth-child(2),
+input[name="slides"]:nth-child(3):checked ~ .thumbs .thumbnail:nth-child(3),
+input[name="slides"]:nth-child(4):checked ~ .thumbs .thumbnail:nth-child(4),
+input[name="slides"]:nth-child(5):checked ~ .thumbs .thumbnail:nth-child(5),
+input[name="slides"]:nth-child(6):checked ~ .thumbs .thumbnail:nth-child(6),
+input[name="slides"]:nth-child(7):checked ~ .thumbs .thumbnail:nth-child(7),
+input[name="slides"]:nth-child(8):checked ~ .thumbs .thumbnail:nth-child(8) {
+	box-shadow: inset 0 0 0 1px rgba(var(--primary), 0.75);
+}
+
+input[id="previous"]:checked ~ .thumbs {
+	transform: translateX(0px);
+
+}
+input[id="next"]:checked ~ .thumbs {
+	transform: translateX(calc(-1*var(--tW)*(8/2 - 1)));
+}
+
+.nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
+    color: #48d9b8;
+	background-color: white;
+	font-family: 'Montserrat', sans-serif;
+}
+/* .nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:hover {
+    background-color: #337ab7;
+	color: white;
+} */
+.sidebar-nav li a:hover {
+	background-color: white;
+	/* color: white; */
+	border: #48d9b8 solid 2px;
+}
+.nav-stacked > li + li {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.sidebar-nav li {
+    font-family: 'Montserrat', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6, p{
+	font-family: 'Montserrat', sans-serif;
+}
+
+h1, .h1 {
+	font-size: 36px;
+	color: #2fc2d6;
+}

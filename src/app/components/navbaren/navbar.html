@@ -1,0 +1,188 @@
+<div>
+    <nav class="navbar navbar-default no-margin" id="navPrincipal">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header fixed-brand">
+         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" id="menu-toggle">
+  <span class="glyphicon glyphicon-th-large" aria-hidden="true"></span>
+  </button>
+       <img id="logotipo" src="assets/images/logoVerde.jpg" alt="" width="200px" height="40px">
+       
+      </div>
+      <!-- navbar-header-->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+         <ul class="nav navbar-nav">
+            <li class="active">
+               <button class="navbar-toggle collapse in" data-toggle="collapse" id="menu-toggle-2"> <span class="glyphicon glyphicon-th-large" aria-hidden="true"></span>
+               </button>
+            </li>
+         </ul>
+      </div>
+
+      <section >
+          <div class="welcomehijo">
+               
+              <h3><strong >Welcome <span id="hijodelhijo">{{userNameRegister}}</span>!</strong></h3>
+            </div>
+      </section>
+
+      <section id="SelectButton" class="selectButtonArea">
+        <button id="SelectRegister" class="selectButton"><i class="fa fa-registered"></i></button>
+      </section>
+      <div class="registerBackground">
+        <section id="RegisterForm" class="sectionForm">
+            <div class="formHeader">
+              <!-- <h1 class="formHeading">Register</h1> -->
+              <button class="backBtn">&#10006;</button>
+            </div>
+    
+            <form class="form" name="form" ng-submit="registerRetailer()" role="form">
+                <h2><strong>Complete Registration!</strong></h2>
+    
+                <div class="form-group" ng-class="{ 'has-error': form.direccion.$dirty && form.direccion.$error.required }">
+                    <label for="direccion"></label>
+                    <span class="fa fa-map-marker inputRegister-icon"></span>
+                  <input type="text" placeholder="address" id="direccion" ng-model="register.direccion" required>
+                  <!-- <label for="name">Name</label> -->
+                  <span ng-show="form.direccion.$dirty && form.direccion.$error.required" class="help-block">direccion is required</span>
+                </div>
+    
+            
+                    <div class="row">
+                        <div class="col-sm-7">
+                        <div class="form-group" ng-class="{ 'has-error': form.city.$dirty && form.city.$error.required }">
+                            <label for="city"></label>
+                                <span class="fa fa-building inputRegister-icon"></span>
+                                <input type="text" placeholder="City/​​State" id="ciudad" ng-model="register.city" required>
+                                <!-- <label for="name">Name</label> -->
+                                <span ng-show="form.city.$dirty && form.city.$error.required" class="help-block">city is required</span>
+                            </div>
+                        </div>
+                        <div class="col-sm-5">
+                        <div class="form-group" ng-class="{ 'has-error': form.cp.$dirty && form.cp.$error.required }">
+                            <label for="cp"></label>
+                                <span class="fa fa-envelope inputRegister-icon"></span>
+                                <input type="number" placeholder="C.P." id="postal" ng-model="register.cp" required>
+                                <!-- <label for="name">Name</label> -->
+                                <span ng-show="form.cp.$dirty && form.cp.$error.required" class="help-block">C.P. is required</span>
+                            </div>
+                        </div>
+                    </div>
+                     
+                    <h5 class="text-center" style="color: rgb(139, 139, 139)">Gender:</h5>
+                    <div id="radiofather" ng-class="{ 'has-error': form.radio.$dirty && form.radio.$error.required }">
+                        <!-- <label for="radio"></label> -->
+                        <label class="radio" ng-repeat="a in datatable">
+                        <input name="radio" type="radio" ng-value="a.genero" ng-model="register.genero" required><!--checked ng-model="register.radio"     ng-value="hombre"-->
+                        <span>{{a.genero}}</span>
+                        </label>
+                        <!-- <label class="radio">
+                        <input name="radio" type="radio" ng-value="mujer">
+                        <span>Woman</span>
+                        </label> -->
+                        <!-- <span ng-show="form.radio.$dirty && form.radio.$error.required" class="help-block">radio is required</span> -->
+                    </div>
+    
+                    
+    
+                    <!-- <div class="sel sel--black-panther" ng-class="{ 'has-error': form.civil.$dirty && form.civil.$error.required }">
+                       
+                            <select name="civil" id="select-profession">
+                              <option value="" disabled>Civil status</option>
+    
+                                  <option value="gamer" ng-repeat="b in dataSelect">married</option>
+                                  
+                            </select>
+                            
+                          </div>
+                           -->
+                           <label class="select-wrapper">
+                          <select name="pets" ng-class="{ 'has-error': form.radio.$dirty && form.radio.$error.required }" ng-model="register.status" required>
+                            <optgroup>
+                              <option value="" disabled>Civil status</option>
+                              <option ng-repeat="b in dataSelect" ng-value="b.rayos" required>{{b.rayos}}</option>
+                              
+                            </optgroup>
+                          </select>
+                        </label>
+    
+                        <!-- <select ng-model="register.select">
+                          <option ng-repeat="b in dataSelect" ng-value="b.rayos">{{b.rayos}}</option>
+                        </select> -->
+    
+                          <div class="input-group"
+                            moment-picker="register.datepicker"
+                            format="YYYY-MM-DD" ng-class="{ 'has-error': form.date.$dirty && form.date.$error.required }">
+                            <!-- <label for="date"></label> -->
+                            <span class="input-group-addon">
+                                <i class="octicon fa fa-calendar"></i>
+                            </span>
+                            <input class="form-control"
+                                  placeholder="Birthdate YYYY-MM-DD"
+                                  ng-model="register.datepicker"
+                                  ng-model-options="{ updateOn: 'blur' }" required><!--ng-model="register.date"-->
+                                  <span ng-show="form.date.$dirty && form.date.$error.required" class="help-block">date is required</span>
+                        </div>
+    
+                        <div class="form-group" ng-class="{ 'has-error': form.nationality.$dirty && form.nationality.$error.required }">
+                                <span class="fa fa-flag inputRegister-icon"></span>
+                              <input type="text" placeholder="Nationality" id="name" ng-model="register.nationality" required>
+                              <!-- <label for="name">Name</label> -->
+                              <span ng-show="form.nationality.$dirty && form.nationality.$error.required" class="help-block">nationality is required</span>
+                            </div>
+    
+                            <!-- <div class="sel sel--black-panther" ng-class="{ 'has-error': form.educational.$dirty && form.educational.$error.required }">
+                              <select name="select-profession" id="select-profession" ng-model="register.status">
+                                <option value="" disabled>Educational Level</option>
+                                <option value="hacker">high school</option>
+                                <option value="gamer">college</option>
+                                <option value="developer">master's degree</option>
+                                <option value="developer">doctorate</option>
+                              </select>
+                            </div> -->
+                            
+                            <label class="select-wrapper-1">
+                              <select name="pets" ng-class="{ 'has-error': form.educational.$dirty && form.educational.$error.required }" ng-model="register.educational" required>
+                                <optgroup>
+                                  <option value="" disabled>Educational Level</option>
+                                  <option ng-repeat="c in dataSelectProfesion" ng-value="c.educational" required>{{c.educational}}</option>
+                                </optgroup>
+                              </select>
+                            </label>
+    
+                            <div class="form-group" ng-class="{ 'has-error': form.job.$dirty && form.job.$error.required }">
+                                    <span class="fa fa-industry inputRegister-icon"></span>
+                                  <input type="text" placeholder="Job/Activity" id="name" ng-model="register.job" required>
+                                  <!-- <label for="name">Name</label> -->
+                                  <div class="error">
+                                    <i class="fas fa-exclamation-circle"></i>
+                                    Error encountered!
+                                  </div>
+                                </div>
+                                <div class="form-group" ng-class="{ 'has-error': form.phon.$dirty && form.phon.$error.required }">
+                                        <span class="fa fa-phone inputRegister-icon"></span>
+                                      <input type="number" placeholder="Phone" id="name" ng-model="register.phon" required>
+                                      <!-- <label for="name">Name</label> -->
+                                      <div class="error">
+                                        <i class="fas fa-exclamation-circle"></i>
+                                        Error encountered!
+                                      </div>
+                                    </div>
+                                    
+                <input type="submit" value="To Complete">
+              </form>
+              
+          </section>
+          <!-- <pre style="scroll-behavior: auto; height: 500px;">
+              form.$valid: {{form | json}}
+              </pre> -->
+      </div>
+      
+      
+  
+      <!-- bs-example-navbar-collapse-1 -->
+      <button type="text" ng-click="logout()" class="buttonLoginoff buttonBlueoff openb" style="position:absolute; z-index: 3000; top: -5px; right: 0px;">
+        <i class="fa fa-sign-out"></i>
+       <div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>
+     </button>
+   </nav>
+  </div>
